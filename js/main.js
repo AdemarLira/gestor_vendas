@@ -30,7 +30,10 @@ function validarFormulario(){
     }
   
     function login() {
-    
+      if(input === ''){
+        alert('preencha todos os campos!')
+      }
+      
     }
   
     // function excluirCadastro() {

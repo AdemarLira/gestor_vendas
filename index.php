@@ -76,9 +76,10 @@ include_once('php/config.php');
                   </div>
               </div>
               <div class="form-group">
-                <button type="submit" class="custom-save-button" onclick="salvarCadastro()">Enviar</button>
+                <button type="submit" class="custom-save-button" onclick="login()">Entrar</button>
               </div>
               </form>
+              <a href="cadastro.php" id="botao-retornar">Ainda não possui cadastro?</a>
           </div>
       </div>
     </div>
