@@ -10,7 +10,7 @@ include_once('php/config.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <title>Login</title>
+  <title>Cadastro de Usuário</title>
 </head>
 
   <body>
@@ -61,11 +61,15 @@ include_once('php/config.php');
             </svg>
           </a>
 
-          <!-- MODAL DE LOGIN -->
+          <!-- MODAL DE CADASTRO -->
           <div class="custom-cadastro">
-            <h2>Login</h1>
+            <h2>Cadastre-se</h1>
               <div class="modal-body">
                 <form method="POST" action="cadastrar.php" onsubmit="return validarFormulario()">
+                  <div class="form-group">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" class="form-control mb-2" id="nome" placeholder="Digite seu nome" name="nome">
+                  </div>
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input type=" email" class="form-control mb-2" id="email" placeholder="Insira seu email..." name="email">
