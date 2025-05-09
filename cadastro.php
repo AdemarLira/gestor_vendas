@@ -1,5 +1,5 @@
 <?php
-include_once('php/config.php');
+include_once('php/conexao.php');
 ?>
 
 <!DOCTYPE html>

@@ -3,7 +3,7 @@
 $servidor = 'localhost';
 $usuario = 'root';
 $senha = '';
-$dbname = 'gestor-vendas';
+$dbname = 'gestor_vendas';
 
 // Conectando ao banco de dados MySQL
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);

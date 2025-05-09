@@ -23,7 +23,7 @@
     <a href="index.php" id="botao-retornar"> retornar</a>
     <br>
   <?php
-    include_once('php/config.php');
+    include_once('php/conexao.php');
 
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
