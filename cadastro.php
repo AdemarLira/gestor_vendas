@@ -1,5 +1,5 @@
 <?php
-include_once('php/conexao.php');
+include_once('api/conexao.php');
 ?>
 
 <!DOCTYPE html>
