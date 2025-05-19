@@ -29,13 +29,16 @@ function validarFormulario(){
       alert('Cadastro criado com sucesso');
     }
   
-    function login() {
-      if(input === ''){
-        alert('preencha todos os campos!')
+    function validarLogin(){
+      var email = document.getElementById('email'). value;
+      var senha = document.getElementeById('senha').value;
+
+      if(email == '' || senha == ''){
+        alert('Preencha todos os campos');
+        return false;
       }
-      
+      return true;
     }
-  
     // function excluirCadastro() {
     //   if(confirm('Deseja excluir este cadastro?')){
     //     alert('Cadastro excluído com sucesso');

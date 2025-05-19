@@ -21,7 +21,6 @@ include_once('api/conexao.php');
           <h1>LN - Gestor de vendas</h1>
         </div>
       </div>
-
       <div id="background">
         <video loop autoplay muted>
           <source src="./mp4/backgroundVideo.mp4" type="video/mp4">
@@ -65,25 +64,56 @@ include_once('api/conexao.php');
           <div class="custom-cadastro">
             <h2>Login</h1>
               <div class="modal-body">
-                <form method="POST" action="cadastrar.php" onsubmit="return validarFormulario()">
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type=" email" class="form-control mb-2" id="email" placeholder="Insira seu email..." name="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" class="form-control mb-2" id="senha" placeholder="Insira sua senha..." name="senha">
-                  </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="custom-save-button" onclick="login()">Entrar</button>
-              </div>
+              <form id="form-login">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control mb-2" id="email" name="email" placeholder="Insira seu email...">
+                </div>
+                <div class="form-group">
+                  <label for="senha">Senha</label>
+                  <input type="password" class="form-control mb-2" id="senha" name="senha" placeholder="Insira sua senha...">
+                </div>
+                <button type="submit" class="custom-save-button">Entrar</button>
               </form>
               <a href="cadastro.php" id="botao-cadastro">Ainda não possui cadastro?</a>
           </div>
       </div>
     </div>
   </div>
-    <script src="js/main.js"></script>  
+  <p id="resposta"></p>
+    <script src="js/main.js"></script>
+    <script>
+  document.getElementById('form-login').addEventListener('submit', async function(e) {
+  e.preventDefault(); // Evita o envio padrão do formulário
+
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+
+  const formData = new FormData();
+  formData.append('email', email);
+  formData.append('senha', senha);
+
+  try {
+    const response = await fetch('login.php', {
+      method: 'POST',
+      body: formData
+    });
+
+    const resultado = await response.json();
+
+    if (resultado.status === 'success') {
+      alert(resultado.mensagem);
+      window.location.href = "dashboard.php"; // redireciona após sucesso
+    } else {
+      alert(resultado.mensagem);
+    }
+  } catch (error) {
+    alert('Erro ao enviar login. Tente novamente.');
+    console.error(error);
+  }
+});
+</script>
+
+    </script>  
   </body>
 </html>
